@@ -33,3 +33,18 @@
 
 ### install actinia with ingress enabled
     helm upgrade --install actinia mundialis/actinia --set "ingress.enabled=true"
+
+#### example ingress config
+
+    ingress
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
+        kubernetes.io/tls-acme: "true"
+      hosts:
+        - host: chart-example.local
+          paths: [ "/" ]
+      tls:
+        - secretName: chart-example-tls
+          hosts:
+            - chart-example.local
