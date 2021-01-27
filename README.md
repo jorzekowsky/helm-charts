@@ -36,7 +36,7 @@
 
 #### example ingress config
 
-    ingress
+    ingress:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: nginx
